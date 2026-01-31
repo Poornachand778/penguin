@@ -50,7 +50,7 @@ penguin agents set-identity --workspace ~/.penguin/workspace --from-identity
 Override fields explicitly:
 
 ```bash
-penguin agents set-identity --agent main --name "Penguin" --emoji "🦞" --avatar avatars/penguin.png
+penguin agents set-identity --agent main --name "Penguin" --emoji "🐧" --avatar avatars/penguin.png
 ```
 
 Config sample:
@@ -63,8 +63,8 @@ Config sample:
         id: "main",
         identity: {
           name: "Penguin",
-          theme: "space lobster",
-          emoji: "🦞",
+          theme: "helpful assistant",
+          emoji: "🐧",
           avatar: "avatars/penguin.png",
         },
       },

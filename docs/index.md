@@ -249,7 +249,7 @@ _"We're all just playing with our own prompts."_ — an AI, probably high on tok
 
 ## License
 
-MIT — Free as a lobster in the ocean 🦞
+MIT — Free as a penguin in the ocean 🐧
 
 ---
 

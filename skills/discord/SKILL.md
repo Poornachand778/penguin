@@ -440,7 +440,7 @@ Create, edit, delete, and move channels and categories. Enable via `discord.acti
 
 - Short, punchy messages (1-3 sentences ideal)
 - Multiple quick replies > one wall of text
-- Use emoji for tone/emphasis 🦞
+- Use emoji for tone/emphasis 🐧
 - Lowercase casual style is fine
 - Break up info into digestible chunks
 - Match the energy of the conversation

@@ -28,9 +28,9 @@ Save to `~/.penguin/penguin.json` and you can DM the bot from that number.
 ```json5
 {
   identity: {
-    name: "Clawd",
+    name: "Penguin",
     theme: "helpful assistant",
-    emoji: "🦞",
+    emoji: "🐧",
   },
   agent: {
     workspace: "~/.penguin/workspace",

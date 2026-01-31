@@ -1505,7 +1505,7 @@ See [Messages](/concepts/messages) for queueing, sessions, and streaming context
 ```json5
 {
   messages: {
-    responsePrefix: "🦞", // or "auto"
+    responsePrefix: "🐧", // or "auto"
     ackReaction: "👀",
     ackReactionScope: "group-mentions",
     removeAckAfterReply: false,
@@ -3384,4 +3384,4 @@ Cron is a Gateway-owned scheduler for wakeups and scheduled jobs. See [Cron jobs
 
 ---
 
-_Next: [Agent Runtime](/concepts/agent)_ 🦞
+_Next: [Agent Runtime](/concepts/agent)_ 🐧

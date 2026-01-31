@@ -155,7 +155,7 @@ ${theme.muted("Docs:")} ${formatDocsLink("/cli/agent", "docs.penguin.ai/cli/agen
         `
 ${theme.heading("Examples:")}
 ${formatHelpExamples([
-  ['penguin agents set-identity --agent main --name "Penguin" --emoji "🦞"', "Set name + emoji."],
+  ['penguin agents set-identity --agent main --name "Penguin" --emoji "🐧"', "Set name + emoji."],
   ["penguin agents set-identity --agent main --avatar avatars/penguin.png", "Set avatar path."],
   [
     "penguin agents set-identity --workspace ~/.penguin/workspace --from-identity",

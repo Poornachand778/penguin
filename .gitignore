@@ -4,7 +4,7 @@ node_modules
 docker-compose.extra.yml
 dist
 *.bun-build
-pnpm-lock.yaml
+# Keep pnpm-lock.yaml for reproducible builds (removed from gitignore)
 bun.lock
 bun.lockb
 coverage
