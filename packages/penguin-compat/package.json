@@ -1,0 +1,19 @@
+{
+  "name": "penguin",
+  "version": "2026.1.27-beta.1",
+  "description": "Compatibility shim that forwards to penguin",
+  "bin": {
+    "penguin": "./bin/penguin.js"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./cli-entry": "./bin/penguin.js"
+  },
+  "scripts": {
+    "postinstall": "node ./scripts/postinstall.js"
+  },
+  "dependencies": {
+    "penguin": "workspace:*"
+  }
+}

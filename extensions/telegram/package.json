@@ -1,0 +1,14 @@
+{
+  "name": "@penguin/telegram",
+  "version": "2026.1.30",
+  "description": "Penguin Telegram channel plugin",
+  "type": "module",
+  "devDependencies": {
+    "penguin": "workspace:*"
+  },
+  "penguin": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

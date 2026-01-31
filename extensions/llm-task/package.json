@@ -1,0 +1,14 @@
+{
+  "name": "@penguin/llm-task",
+  "version": "2026.1.30",
+  "description": "Penguin JSON-only LLM task plugin",
+  "type": "module",
+  "devDependencies": {
+    "penguin": "workspace:*"
+  },
+  "penguin": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

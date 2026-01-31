@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+IMAGE_NAME="${PENGUIN_IMAGE:-${PENGUIN_IMAGE:-penguin:local}}"
+CONFIG_DIR="${PENGUIN_CONFIG_DIR:-${PENGUIN_CONFIG_DIR:-$HOME/.penguin}}"
+WORKSPACE_DIR="${PENGUIN_WORKSPACE_DIR:-${PENGUIN_WORKSPACE_DIR:-$HOME/.penguin/workspace}}"
+PROFILE_FILE="${PENGUIN_PROFILE_FILE:-${PENGUIN_PROFILE_FILE:-$HOME/.profile}}"
+
+PROFILE_MOUNT=()
+if [[ -f "$PROFILE_FILE" ]]; then
+  PROFILE_MOUNT=(-v "$PROFILE_FILE":/home/node/.profile:ro)
+fi
+
+echo "==> Build image: $IMAGE_NAME"
+docker build -t "$IMAGE_NAME" -f "$ROOT_DIR/Dockerfile" "$ROOT_DIR"
+
+echo "==> Run live model tests (profile keys)"
+docker run --rm -t \
+  --entrypoint bash \
+  -e COREPACK_ENABLE_DOWNLOAD_PROMPT=0 \
+  -e HOME=/home/node \
+  -e NODE_OPTIONS=--disable-warning=ExperimentalWarning \
+  -e PENGUIN_LIVE_TEST=1 \
+  -e PENGUIN_LIVE_MODELS="${PENGUIN_LIVE_MODELS:-${PENGUIN_LIVE_MODELS:-all}}" \
+  -e PENGUIN_LIVE_PROVIDERS="${PENGUIN_LIVE_PROVIDERS:-${PENGUIN_LIVE_PROVIDERS:-}}" \
+  -e PENGUIN_LIVE_MODEL_TIMEOUT_MS="${PENGUIN_LIVE_MODEL_TIMEOUT_MS:-${PENGUIN_LIVE_MODEL_TIMEOUT_MS:-}}" \
+  -e PENGUIN_LIVE_REQUIRE_PROFILE_KEYS="${PENGUIN_LIVE_REQUIRE_PROFILE_KEYS:-${PENGUIN_LIVE_REQUIRE_PROFILE_KEYS:-}}" \
+  -v "$CONFIG_DIR":/home/node/.penguin \
+  -v "$WORKSPACE_DIR":/home/node/.penguin/workspace \
+  "${PROFILE_MOUNT[@]}" \
+  "$IMAGE_NAME" \
+  -lc "set -euo pipefail; [ -f \"$HOME/.profile\" ] && source \"$HOME/.profile\" || true; cd /app && pnpm test:live"

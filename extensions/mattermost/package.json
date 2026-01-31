@@ -1,0 +1,28 @@
+{
+  "name": "@penguin/mattermost",
+  "version": "2026.1.30",
+  "description": "Penguin Mattermost channel plugin",
+  "type": "module",
+  "devDependencies": {
+    "penguin": "workspace:*"
+  },
+  "penguin": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "channel": {
+      "id": "mattermost",
+      "label": "Mattermost",
+      "selectionLabel": "Mattermost (plugin)",
+      "docsPath": "/channels/mattermost",
+      "docsLabel": "mattermost",
+      "blurb": "self-hosted Slack-style chat; install the plugin to enable.",
+      "order": 65
+    },
+    "install": {
+      "npmSpec": "@penguin/mattermost",
+      "localPath": "extensions/mattermost",
+      "defaultChoice": "npm"
+    }
+  }
+}

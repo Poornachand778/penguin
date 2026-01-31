@@ -1,0 +1,14 @@
+{
+  "name": "@penguin/imessage",
+  "version": "2026.1.30",
+  "description": "Penguin iMessage channel plugin",
+  "type": "module",
+  "devDependencies": {
+    "penguin": "workspace:*"
+  },
+  "penguin": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

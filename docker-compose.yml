@@ -1,0 +1,45 @@
+services:
+  penguin-gateway:
+    image: ${PENGUIN_IMAGE:-penguin:local}
+    environment:
+      HOME: /home/node
+      TERM: xterm-256color
+      PENGUIN_GATEWAY_TOKEN: ${PENGUIN_GATEWAY_TOKEN}
+      CLAUDE_AI_SESSION_KEY: ${CLAUDE_AI_SESSION_KEY}
+      CLAUDE_WEB_SESSION_KEY: ${CLAUDE_WEB_SESSION_KEY}
+      CLAUDE_WEB_COOKIE: ${CLAUDE_WEB_COOKIE}
+    volumes:
+      - ${PENGUIN_CONFIG_DIR}:/home/node/.penguin
+      - ${PENGUIN_WORKSPACE_DIR}:/home/node/.penguin/workspace
+    ports:
+      - "${PENGUIN_GATEWAY_PORT:-18789}:18789"
+      - "${PENGUIN_BRIDGE_PORT:-18790}:18790"
+    init: true
+    restart: unless-stopped
+    command:
+      [
+        "node",
+        "dist/index.js",
+        "gateway",
+        "--bind",
+        "${PENGUIN_GATEWAY_BIND:-lan}",
+        "--port",
+        "${PENGUIN_GATEWAY_PORT:-18789}",
+      ]
+
+  penguin-cli:
+    image: ${PENGUIN_IMAGE:-penguin:local}
+    environment:
+      HOME: /home/node
+      TERM: xterm-256color
+      BROWSER: echo
+      CLAUDE_AI_SESSION_KEY: ${CLAUDE_AI_SESSION_KEY}
+      CLAUDE_WEB_SESSION_KEY: ${CLAUDE_WEB_SESSION_KEY}
+      CLAUDE_WEB_COOKIE: ${CLAUDE_WEB_COOKIE}
+    volumes:
+      - ${PENGUIN_CONFIG_DIR}:/home/node/.penguin
+      - ${PENGUIN_WORKSPACE_DIR}:/home/node/.penguin/workspace
+    stdin_open: true
+    tty: true
+    init: true
+    entrypoint: ["node", "dist/index.js"]

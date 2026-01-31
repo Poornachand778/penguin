@@ -1,0 +1,14 @@
+{
+  "name": "@penguin/whatsapp",
+  "version": "2026.1.30",
+  "description": "Penguin WhatsApp channel plugin",
+  "type": "module",
+  "devDependencies": {
+    "penguin": "workspace:*"
+  },
+  "penguin": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

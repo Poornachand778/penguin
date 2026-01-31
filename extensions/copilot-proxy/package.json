@@ -1,0 +1,14 @@
+{
+  "name": "@penguin/copilot-proxy",
+  "version": "2026.1.30",
+  "description": "Penguin Copilot Proxy provider plugin",
+  "type": "module",
+  "devDependencies": {
+    "penguin": "workspace:*"
+  },
+  "penguin": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

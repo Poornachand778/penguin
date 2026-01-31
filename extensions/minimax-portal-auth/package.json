@@ -1,0 +1,14 @@
+{
+  "name": "@penguin/minimax-portal-auth",
+  "version": "2026.1.30",
+  "description": "Penguin MiniMax Portal OAuth provider plugin",
+  "type": "module",
+  "devDependencies": {
+    "penguin": "workspace:*"
+  },
+  "penguin": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

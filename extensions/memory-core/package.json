@@ -1,0 +1,17 @@
+{
+  "name": "@penguin/memory-core",
+  "version": "2026.1.30",
+  "description": "Penguin core memory search plugin",
+  "type": "module",
+  "devDependencies": {
+    "penguin": "workspace:*"
+  },
+  "peerDependencies": {
+    "penguin": ">=2026.1.26"
+  },
+  "penguin": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}
