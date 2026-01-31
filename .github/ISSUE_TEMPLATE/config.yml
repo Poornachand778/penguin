@@ -1,8 +1,8 @@
 blank_issues_enabled: true
 contact_links:
   - name: Onboarding
-    url: https://discord.gg/clawd
-    about: New to Penguin? Join Discord for setup guidance from Krill in #help.
+    url: https://github.com/Poornachand778/penguin/discussions
+    about: New to Penguin? Start a discussion for setup guidance.
   - name: Support
-    url: https://discord.gg/clawd
-    about: Get help from Krill and the community on Discord in #help.
+    url: https://github.com/Poornachand778/penguin/issues
+    about: Get help by opening an issue.

@@ -4,9 +4,9 @@ read_when:
   - Introducing Penguin to newcomers
 ---
 
-# Penguin 🦞
+# Penguin 🐧
 
-> _"EXFOLIATE! EXFOLIATE!"_ — A space lobster, probably
+> _"Ready to waddle into action!"_ — Penguin, your AI assistant
 
 <p align="center">
     <img

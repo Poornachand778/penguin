@@ -8,7 +8,7 @@ RUN apt-get update \
     git \
   && rm -rf /var/lib/apt/lists/*
 
-COPY run.sh /usr/local/bin/openclaw-install-e2e
-RUN chmod +x /usr/local/bin/openclaw-install-e2e
+COPY run.sh /usr/local/bin/penguin-install-e2e
+RUN chmod +x /usr/local/bin/penguin-install-e2e
 
-ENTRYPOINT ["/usr/local/bin/openclaw-install-e2e"]
+ENTRYPOINT ["/usr/local/bin/penguin-install-e2e"]

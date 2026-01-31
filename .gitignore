@@ -19,21 +19,21 @@ ui/test-results/
 # Bun build artifacts
 *.bun-build
 apps/macos/.build/
-apps/shared/MoltbotKit/.build/
+apps/shared/PenguinKit/.build/
 **/ModuleCache/
 bin/
-bin/clawdbot-mac
+bin/penguin-mac
 bin/docs-list
 apps/macos/.build-local/
 apps/macos/.swiftpm/
-apps/shared/MoltbotKit/.swiftpm/
+apps/shared/PenguinKit/.swiftpm/
 Core/
 apps/ios/*.xcodeproj/
 apps/ios/*.xcworkspace/
 apps/ios/.swiftpm/
 vendor/
-apps/ios/Clawdbot.xcodeproj/
-apps/ios/Clawdbot.xcodeproj/**
+apps/ios/Penguin.xcodeproj/
+apps/ios/Penguin.xcodeproj/**
 apps/macos/.build/**
 **/*.bun-build
 apps/ios/*.xcfilelist

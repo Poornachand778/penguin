@@ -2819,4 +2819,4 @@ You can add options like `debounce:2s cap:25 drop:summarize` for followup modes.
 
 ---
 
-Still stuck? Ask in [Discord](https://discord.com/invite/clawd) or open a [GitHub discussion](https://github.com/penguin/penguin/discussions).
+Still stuck? Open a [GitHub issue](https://github.com/Poornachand778/penguin/issues) or start a [GitHub discussion](https://github.com/Poornachand778/penguin/discussions).
