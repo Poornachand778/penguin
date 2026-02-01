@@ -339,7 +339,6 @@ function main() {
 try {
   const skip =
     process.env.PENGUIN_SKIP_POSTINSTALL === "1" ||
-    process.env.PENGUIN_SKIP_POSTINSTALL === "1" ||
     process.env.VITEST === "true" ||
     process.env.NODE_ENV === "test";
 

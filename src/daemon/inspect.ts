@@ -16,7 +16,7 @@ export type ExtraGatewayService = {
   label: string;
   detail: string;
   scope: "user" | "system";
-  marker?: "penguin" | "penguin" | "penguin";
+  marker?: "penguin";
   legacy?: boolean;
 };
 
@@ -24,7 +24,7 @@ export type FindExtraGatewayServicesOptions = {
   deep?: boolean;
 };
 
-const EXTRA_MARKERS = ["penguin", "penguin", "penguin"] as const;
+const EXTRA_MARKERS = ["penguin"] as const;
 const execFileAsync = promisify(execFile);
 
 export function renderGatewayServiceCleanupHints(

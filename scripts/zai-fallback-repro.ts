@@ -98,14 +98,10 @@ async function main() {
   await fs.writeFile(configPath, JSON.stringify(config, null, 2), "utf8");
 
   const sessionId =
-    process.env.PENGUIN_ZAI_FALLBACK_SESSION_ID ??
-    process.env.PENGUIN_ZAI_FALLBACK_SESSION_ID ??
-    randomUUID();
+    process.env.PENGUIN_ZAI_FALLBACK_SESSION_ID ?? randomUUID();
 
   const baseEnv: NodeJS.ProcessEnv = {
     ...process.env,
-    PENGUIN_CONFIG_PATH: configPath,
-    PENGUIN_STATE_DIR: stateDir,
     PENGUIN_CONFIG_PATH: configPath,
     PENGUIN_STATE_DIR: stateDir,
     ZAI_API_KEY: zaiKey,
