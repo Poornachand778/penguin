@@ -1,10 +1,17 @@
 name: Install Smoke
 
+# Disabled: requires penguin.ai domain with install scripts
+# on:
+#   push:
+#     branches: [main]
+#   pull_request:
+#   workflow_dispatch:
 on:
-  push:
-    branches: [main]
-  pull_request:
   workflow_dispatch:
+    inputs:
+      skip:
+        description: 'Skip this workflow (always skipped for forks without penguin.ai)'
+        default: 'true'
 
 jobs:
   install-smoke:
