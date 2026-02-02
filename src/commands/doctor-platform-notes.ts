@@ -73,26 +73,8 @@ export async function noteMacLaunchctlGatewayEnvOverrides(
   }
 
   const getenv = deps?.getenv ?? launchctlGetenv;
-  const deprecatedLaunchctlEntries = [
-    ["PENGUIN_GATEWAY_TOKEN", await getenv("PENGUIN_GATEWAY_TOKEN")],
-    ["PENGUIN_GATEWAY_PASSWORD", await getenv("PENGUIN_GATEWAY_PASSWORD")],
-    ["PENGUIN_GATEWAY_TOKEN", await getenv("PENGUIN_GATEWAY_TOKEN")],
-    ["PENGUIN_GATEWAY_PASSWORD", await getenv("PENGUIN_GATEWAY_PASSWORD")],
-  ].filter((entry): entry is [string, string] => Boolean(entry[1]?.trim()));
-  if (deprecatedLaunchctlEntries.length > 0) {
-    const lines = [
-      "- Deprecated launchctl environment variables detected (ignored).",
-      ...deprecatedLaunchctlEntries.map(
-        ([key]) =>
-          `- \`${key}\` is set; use \`PENGUIN_${key.slice(key.indexOf("_") + 1)}\` instead.`,
-      ),
-    ];
-    (deps?.noteFn ?? note)(lines.join("\n"), "Gateway (macOS)");
-  }
 
-  const tokenEntries = [
-    ["PENGUIN_GATEWAY_TOKEN", await getenv("PENGUIN_GATEWAY_TOKEN")],
-  ] as const;
+  const tokenEntries = [["PENGUIN_GATEWAY_TOKEN", await getenv("PENGUIN_GATEWAY_TOKEN")]] as const;
   const passwordEntries = [
     ["PENGUIN_GATEWAY_PASSWORD", await getenv("PENGUIN_GATEWAY_PASSWORD")],
   ] as const;
@@ -127,10 +109,7 @@ export function noteDeprecatedLegacyEnvVars(
   deps?: { noteFn?: typeof note },
 ) {
   const entries = Object.entries(env)
-    .filter(
-      ([key, value]) =>
-        (key.startsWith("PENGUIN_") || key.startsWith("PENGUIN_")) && value?.trim(),
-    )
+    .filter(([key, value]) => key.startsWith("PENGUIN_") && value?.trim())
     .map(([key]) => key);
   if (entries.length === 0) {
     return;

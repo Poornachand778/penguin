@@ -313,7 +313,7 @@ describe("mention helpers", () => {
   });
 
   it("normalizes zero-width characters", () => {
-    expect(normalizeMentionText("open\u200bclaw")).toBe("penguin");
+    expect(normalizeMentionText("pen\u200bguin")).toBe("penguin");
   });
 
   it("matches patterns case-insensitively", () => {
