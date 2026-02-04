@@ -5,7 +5,6 @@
   "keywords": ["ai", "assistant", "chatbot", "whatsapp", "telegram", "automation"],
   "license": "UNLICENSED",
   "author": "Poorna",
-  "private": true,
   "bin": {
     "penguin": "penguin.mjs"
   },

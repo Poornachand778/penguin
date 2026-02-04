@@ -22,8 +22,11 @@ Penguin is an autonomous AI personal assistant that runs locally on your hardwar
 **Requirements:** Node.js >= 22
 
 ```bash
-# Install globally
-npm install -g penguin
+# Install globally from npm
+npm install -g penguin-ai
+
+# Or install directly from GitHub
+npm install -g github:Poornachand778/penguin
 
 # Run onboarding wizard (recommended)
 penguin onboard
